@@ -3,21 +3,33 @@
     <head>
         <meta charset="UTF-8">
         <title>Beautiful Beginnings</title>
-
-        <meta name="robots" content="noindex, nofollow">
+        
+        <!-- setting robots to index so that search engines can index/rank this page as it being the
+            home page of the website -->
+        <!-- also we want this to be followed so changing from nofollow to follow -->
+        <meta name="robots" content="index, follow">
         <meta http-equiv="X-UA-Compatible" content="IE=9" />
 
+        <meta name="keywords" content="baby apparel, baby gifts, christening, baby bedding, decor, lighting, 
+        beautiful Beginnings, babies, clothing, online store" />
+
+        <meta name="description" content="A one stop shop for all your baby clothes, accesories and more." />
+        <meta name="DC.title" content="Beautiful Beginnings - Just Born Baby Products" />
+        <meta name="copyright" content="This website is powered by Americaneagle" />
+        
+        <!-- setting the viweport for media queries -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.min.css"/>
+        <link rel="stylesheet" href="css/main.min.css"/>
 
         <!-- Adding Allura and Alex Brush google fonts -->
         <link href="https://fonts.googleapis.com/css?family=Allura" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Alex+Brush" rel="stylesheet">
 
-        <!-- To add the search icon -->
+        <!-- font awesome CSS for icons -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        
-        <link rel="stylesheet" href="css/normalize.min..css"/>
-        <link rel="stylesheet" href="css/main.css"/>
+
     </head> 
     <body>
         <div class="page-wrap">
@@ -42,10 +54,12 @@
                     <div class="header-toggles--mobile">
                         <a href="#">
                             <!-- Added the cart icon but needs testing -->
-                            <img src="images/shopping-cart.png" alt="cart" style="width: 32px; height: 28px;">
+                            <!-- SVG images is used for the cart -->
+                            <img src="images/shopping-cart.svg" alt="cart" style="width: 32px; height: 28px;">
                             <span class="visually-hidden">Go to Cart</span>
                         </a>
-                        <a href="#" class="menu-toggle">
+                        <a href="#" class="menu-toggle" onclick="hamburgerToggleMenu()">
+                            <!--added search icon -->
                             <i class="fa fa-bars"></i>
                             <span class="visually-hidden">Toggle Menu</span>
                         </a>
@@ -57,12 +71,13 @@
                     <div class="site-motto">Children Our greatest earthly blessing.</div>
 
                     <div class="site-logo">
-                        <img src="images/bb-logo.png" alt="Beautiful Beginnings: Celebrating baby and child">
+                        <!-- changed the logo form jpg to svg to account for retina screens -->
+                        <img src="images/bb-logo.svg" alt="Beautiful Beginnings: Celebrating baby and child">
                     </div>
 
                     <div class="site-search">
                         <form class="site-search__form">
-                            <label for="headerSiteSeach" class="visually-hidden">Search this site...</label>
+                            <label for="headerSiteSearch" class="visually-hidden">Search this site...</label>
                             <input id="headerSiteSearch" type="search" placeholder="Search this site.."/>
                             <button class="site-search__button">
                                 <!-- search icon added-->
@@ -85,13 +100,15 @@
                     </div>
 
                 </div>
-                <div class="header-bottom">
+                <div class="header-bottom" id="hamburgerMenu">
 
                     <div class="site-search">
                         <form class="site-search__form">
                             <label for="headerMenuSiteSeach" class="visually-hidden">Search this site...</label>
                             <input id="headerMenuSiteSeach" type="search" placeholder="Search this site.."/>
                             <button class="site-search__button">
+                                <!-- search icon -->
+                                <i class="fa fa-search"></i>
                                 <span class="visually-hidden">Submit Search</span>
                             </button>
                         </form>
@@ -124,7 +141,7 @@
                 <div class="slideshow">
                     <section class="slideshow__slide slide">
                         <figure class="slide__bg">
-                            <img src="images/bb-slideshow-example-1.jpg" />
+                            <img src="images/bb-slideshow-example-1.jpg" alt="slide 01"/>
                             <figcaption>Baby Dean - Wheaton, illinois</figcaption>
                         </figure>
                         <div class="slide__content">
@@ -136,6 +153,20 @@
                         </div>
                     </section>
                     <!-- need another slide and to setup slideshow functioanlity -->
+                    <!-- added another slide for the slideshow functionality -->
+                    <section class="slideshow__slide slide">
+                        <figure class="slide__bg">
+                            <img src="images/bb-slideshow-example-2.jpg" alt="slide 02"/>
+                            <figcaption>Baby Dean - Wheaton, illinois</figcaption>
+                        </figure>
+                        <div class="slide__content">
+                            <a href="#" class="cta">
+                                <h2 class="cta__title">Halloween Super Sale</h2>
+                                <p class="cta__description">Save up to 80% off on selected body suits now through Halloween Day!</p>
+                                <span class="button button--primary">Shop Body Suits</span>
+                            </a>
+                        </div>
+                    </section>
                 </div>
 
                 <section class="featured-widget">
@@ -148,21 +179,21 @@
                         <ul class="card-list">
                             <li>
                                 <a href="#" class="card-list__item">
-                                    <img class="item__image" src="images/clothes.jpg"/>
+                                    <img class="item__image" src="images/clothes.jpg" alt="clothes"/>
                                     <h3 class="item__title">Hazel Ruffle Top and Capri Set by Angel Dear</h3>
                                     <span class="item__price">$49.00</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="card-list__item">
-                                    <img class="item__image" src="images/crib.jpg"/>
+                                    <img class="item__image" src="images/crib.jpg" alt="crib"/>
                                     <h3 class="item__title">Alexis Crib with Rose Garland by Newport Cottages</h3>
                                     <span class="item__price">$1,395.00</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="card-list__item">
-                                    <img class="item__image" src="images/stuffed-animal.jpg"/>
+                                    <img class="item__image" src="images/stuffed-animal.jpg" alt="animal toy"/>
                                     <h3 class="item__title">Little G Plush Giraffe by Little Giraffe</h3>
                                     <span class="item__price">$42.00</span>
                                 </a>
@@ -247,19 +278,19 @@
                             <h2>Follow Us</h2>
                             <ul class="social-list">
                                 <li>
-                                    <a href="#"><img src="images/social-facebook.png"></a>
+                                    <a href="#"><img src="images/social-facebook.png" alt="facebook"></a>
                                 </li>
                                 <li>
-                                    <a href="#"><img src="images/social-twitter.png"></a>
+                                    <a href="#"><img src="images/social-twitter.png" alt="twitter"></a>
                                 </li>
                                 <li>
-                                    <a href="#"><img src="images/social-pintrest.png"></a>
+                                    <a href="#"><img src="images/social-pintrest.png" alt="pintrest"></a>
                                 </li>
                                 <li>
-                                    <a href="#"><img src="images/social-youtube.png"></a>
+                                    <a href="#"><img src="images/social-youtube.png" alt="youtube"></a>
                                 </li>
                                 <li>
-                                    <a href="#"><img src="images/social-google-plus.png"></a>
+                                    <a href="#"><img src="images/social-google-plus.png" alt="google-plus"></a>
                                 </li>
                             </ul>
                         </div>
@@ -281,35 +312,41 @@
                     <div class="page-footer__column">
                         <div class="copyright">
                             <p><span class="copyright__text">@2013 Beautiful Beginnings. All Rights Reserved</span> <a href="#">Site Map</a> <a href="#">Privacy Policy</a> <a href="#">Terms &amp; Conditions</a></p>
-                            <p class="ae-logo"><img src="images/powered-by-americaneagle.png" /> Web Site design and development by Americaneagle.com</p>
+                            <p class="ae-logo"><img src="images/powered-by-americaneagle.png" alt="Americaneagle" /> Web Site design and development by Americaneagle.com</p>
                         </div>
                     </div>
 
                     <div class="page-footer__column">
                         <div class="site-logo">
-                            <img src="images/bb-logo.png">
+                            <img src="images/bb-logo.svg" alt="Americaneagle logo">
                         </div>
                     </div>
 
                 </div>
+                <!-- below code block is added for the smaller screens -->
+                <!-- mobile footer start-->
+                <div class="footer-bottom-mobile">
+                    <div class="page-footer__column">
+                        <div class="site-logo">
+                           <img src="images/bb-logo.svg" alt="logo">
+                        </div>
+                    </div>
+                    <div class="page-footer__column">
+                        <div class="copyright">
+                            <p><span class="copyright__text">@2013 Beautiful Beginnings. All Rights Reserved</span></p>
+                            <p><span class="copyright__text"><a href="#">Site Map</a> <a href="#">Privacy Policy</a> <a href="#">Terms &amp; Conditions</a></span>
+                        </div>
+                    </div>
+                    <div class="page-footer__column">
+                        <div class="ae-logo">   
+                            <img src="images/powered-by-americaneagle.png" alt="Americaneagle"/>
+                        </div>
+                    </div>
+                </div>
+                <!-- mobile footer end-->
             </footer>
         </div>
-
-        <script type="text/javascript">
-            var acc = document.getElementsByClassName("expander__toggle");
-            var i;
-
-            for (i = 0; i < acc.length; i++) {
-              acc[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                var panel = this.nextElementSibling;
-                if (panel.style.maxHeight){
-                  panel.style.maxHeight = null;
-                } else {
-                  panel.style.maxHeight = panel.scrollHeight + "px";
-                } 
-              });
-            }
-        </script>
+        <!-- javascript file in the body of the html for faster page-loading -->
+        <script src="js/main.min.js"></script>
     </body>
 </html>
